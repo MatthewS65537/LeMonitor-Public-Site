@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Monitor - Enhanced Sleep Experience</title>
+    <link rel="stylesheet" href="static/main.css">
+    <style>
+        :root {
+            --primary-purple: #8A2BE2;
+            --primary-purple-light: #9D4EDD;
+        }
+        .glowing-divider {
+            width: 150px;
+            height: 2px;
+            margin: 1.5rem auto;
+            background: linear-gradient(90deg, 
+                transparent 0%,
+                var(--primary-purple) 20%,
+                var(--primary-purple-light) 50%,
+                var(--primary-purple) 80%,
+                transparent 100%
+            );
+            position: relative;
+            overflow: hidden;
+        }
+        .glowing-divider::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent 0%,
+                rgba(255, 255, 255, 0.4) 50%,
+                transparent 100%
+            );
+            animation: shimmer 2s infinite;
+        }
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        .vision-title-divider {
+            width: 150px;
+            height: 2px;
+            margin: 1.5rem auto;
+            background: linear-gradient(90deg, 
+                transparent 0%,
+                var(--primary-purple) 20%,
+                var(--primary-purple-light) 50%,
+                var(--primary-purple) 80%,
+                transparent 100%
+            );
+            position: relative;
+            overflow: hidden;
+        }
+        .vision-title-sub {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, 
+                var(--primary-purple) 0%,
+                var(--primary-purple-light) 25%,
+                var(--primary-purple) 50%,
+                var(--primary-purple-light) 75%,
+                var(--primary-purple) 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: purpleShimmer 4s linear infinite;
+            background-size: 200% auto;
+        }
+        @keyframes purpleShimmer {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+        
+        /* Add dividers to other sections */
+        .section-content h2 {
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .section-content h2 + .glowing-divider {
+            margin-bottom: 3rem;
+        }
+        .header-frame {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            border: none;
+            z-index: 1000;
+        }
+
+        .footer-frame {
+            width: 100%;
+            height: 300px;
+            border: none;
+            margin-top: -2rem;
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        .poster-section {
+            padding-top: 8rem;
+            background: #0a0a0a;
+        }
+
+        .looking-forward {
+            padding-bottom: 3rem;
+        }
+
+        .poster-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 3rem auto 4rem;
+            padding: 0 2rem;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="templates/header.html" class="header-frame" title="Header"></iframe>
+
+    <main>
+        <section class="hero">
+            <style>
+                .hero {
+                    position: relative;
+                    overflow: hidden;
+                }
+                .hero-content {
+                    position: relative;
+                    z-index: 2;
+                }
+                .hero h1 {
+                    font-size: 4rem;
+                    margin-bottom: 1rem;
+                    background: linear-gradient(135deg, 
+                        var(--primary-purple) 0%,
+                        #b48ee8 25%,
+                        var(--primary-purple) 50%,
+                        #b48ee8 75%,
+                        var(--primary-purple) 100%
+                    );
+                    background-size: 400% auto;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    animation: heroShimmer 15s linear infinite, heroGlow 4s ease-in-out infinite alternate;
+                }
+                @keyframes heroShimmer {
+                    0% { background-position: 0% center; }
+                    100% { background-position: 400% center; }
+                }
+                @keyframes heroGlow {
+                    from {
+                        text-shadow: 
+                            0 0 20px rgba(180, 142, 232, 0.1),
+                            0 0 40px rgba(180, 142, 232, 0.05),
+                            0 0 60px rgba(180, 142, 232, 0.02);
+                    }
+                    to {
+                        text-shadow: 
+                            0 0 40px rgba(180, 142, 232, 0.15),
+                            0 0 80px rgba(180, 142, 232, 0.1),
+                            0 0 120px rgba(180, 142, 232, 0.05);
+                    }
+                }
+                .hero-subtitle {
+                    font-size: 1.5rem;
+                    margin-bottom: 2rem;
+                    color: var(--text-secondary);
+                    max-width: 600px;
+                    animation: fadeInUp 1s ease-out 0.2s backwards;
+                }
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            </style>
+            <div class="hero-content">
+                <h1>Transform Your Sleep</h1>
+                <p class="hero-subtitle">Experience the future of sleep monitoring with our breakthrough decentralized AI technology</p>
+                <div class="cta-buttons">
+                    <a href="#sleep-pandemic" class="primary-btn">Why Sleep Matters</a>
+                    <a href="docs/technology/technology.html" class="secondary-btn">Our Technology</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="gradient-sphere"></div>
+            </div>
+        </section>
+
+        <section class="problems" id="sleep-pandemic">
+            <style>
+                .emphasis-text {
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                    text-align: center;
+                    margin: 4rem 0;
+                    background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-purple-light) 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    animation: glow 2s ease-in-out infinite alternate;
+                }
+                @keyframes glow {
+                    from {
+                        text-shadow: 0 0 10px rgba(138, 43, 226, 0.2);
+                    }
+                    to {
+                        text-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+                    }
+                }
+                .awareness-quote {
+                    font-size: 1.2rem;
+                    line-height: 1.8;
+                    color: var(--text-secondary);
+                    max-width: 800px;
+                    margin: 2rem auto;
+                    text-align: center;
+                    padding: 2rem;
+                    background: rgba(255, 255, 255, 0.03);
+                    border-radius: 12px;
+                    position: relative;
+                }
+                .awareness-quote::before {
+                    content: '"';
+                    font-size: 4rem;
+                    position: absolute;
+                    top: -1rem;
+                    left: 1rem;
+                    color: var(--primary-purple-light);
+                    opacity: 0.3;
+                }
+            </style>
+            <div class="section-content">
+                <h2>Sleep Illnesses: A Silent Pandemic</h2>
+                <div class="glowing-divider"></div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">1/3</div>
+                        <div class="stat-divider"></div>
+                        <p class="stat-text">Adults get less than 7 hours of sleep per night, falling way short of recommended healthy sleep patterns</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">6.5</div>
+                        <div class="stat-divider"></div>
+                        <p class="stat-text">Hours of average nightly sleep for high school students, significantly below the recommended 8-10 hours</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-divider"></div>
+                        <p class="stat-text">Of sleep apnea cases go undiagnosed, leaving millions at risk of serious health complications</p>
+                    </div>
+                </div>
+                <div class="problems-footer">
+                    <p class="problems-text">The CDC has declared sleep deprivation a "public health pandemic." People are sleeping poorly, and it's hurting their health in ways they can't see - until it's too late.</p>
+                </div>
+                
+                <div class="emphasis-text">Awareness is Key</div>
+                
+                <div class="awareness-image">
+                    <style>
+                        .awareness-image {
+                            max-width: 800px;
+                            margin: 2rem auto;
+                            text-align: center;
+                        }
+                        .awareness-image img {
+                            width: 100%;
+                            height: auto;
+                            border-radius: 20px;
+                            box-shadow: 0 4px 20px rgba(138, 43, 226, 0.2);
+                        }
+                    </style>
+                    <img src="./media/awareness_quote.png" alt="How well you sleep and how well you think you sleep do not equate. People may wake up after 4 hours and still feel refreshed - but that doesn't mean no damage has been done. It is this silent epidemic that is now perforating through society." />
+                </div>
+                <p class="vision-statement">Le Monitor is designed to address this awareness gap by providing a performant, accessible, and private sleep monitoring solution. We hope that by increasing awareness, we can help people realize the quality issues with their sleep, and make the necessary changes to improve it.</p>
+            </div>
+        </section>
+
+        <section class="vision" id="vision">
+            <style>
+                .vision {
+                    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+                    padding: 6rem 2rem;
+                    color: var(--text-primary);
+                    position: relative;
+                    overflow: hidden;
+                }
+                .vision::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: radial-gradient(circle at 50% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
+                    pointer-events: none;
+                }
+                .vision-header {
+                    text-align: center;
+                    max-width: 800px;
+                    margin: 0 auto 2rem;
+                }
+                .vision-title-main {
+                    font-size: 4rem;
+                    margin-bottom: 1rem;
+                    background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-purple-light) 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+                .vision-title-divider {
+                    width: 150px;
+                    height: 2px;
+                    margin: 1.5rem auto;
+                    background: linear-gradient(90deg, 
+                        transparent 0%,
+                        var(--primary-purple) 20%,
+                        var(--primary-purple-light) 50%,
+                        var(--primary-purple) 80%,
+                        transparent 100%
+                    );
+                    position: relative;
+                    overflow: hidden;
+                }
+                .vision-title-divider::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -100%;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(90deg, 
+                        transparent 0%,
+                        rgba(255, 255, 255, 0.4) 50%,
+                        transparent 100%
+                    );
+                    animation: shimmer 2s infinite;
+                }
+                @keyframes shimmer {
+                    0% {
+                        left: -100%;
+                    }
+                    100% {
+                        left: 100%;
+                    }
+                }
+                .vision-title-sub {
+                    font-size: 2rem;
+                    margin-bottom: 2rem;
+                    background: linear-gradient(135deg, 
+                        var(--primary-purple) 0%,
+                        var(--primary-purple-light) 25%,
+                        var(--primary-purple) 50%,
+                        var(--primary-purple-light) 75%,
+                        var(--primary-purple) 100%
+                    );
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    animation: purpleShimmer 4s linear infinite;
+                    background-size: 200% auto;
+                }
+                @keyframes purpleShimmer {
+                    0% {
+                        background-position: 0% center;
+                    }
+                    100% {
+                        background-position: 200% center;
+                    }
+                }
+                .vision-subtitle {
+                    font-size: 1.2rem;
+                    line-height: 1.8;
+                    color: var(--text-secondary);
+                    margin-bottom: 2rem;
+                }
+                .vision-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    gap: 2rem;
+                    margin: 3rem 0;
+                }
+                .vision-card {
+                    background: rgba(255, 255, 255, 0.03);
+                    border-radius: 16px;
+                    padding: 2rem;
+                    transition: all 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                }
+                .vision-card::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, transparent 100%);
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+                .vision-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 30px rgba(138, 43, 226, 0.15);
+                }
+                .vision-card:hover::before {
+                    opacity: 1;
+                }
+                .vision-icon {
+                    font-size: 2.5rem;
+                    margin-bottom: 1.5rem;
+                    position: relative;
+                }
+                .vision-card h3 {
+                    font-size: 1.5rem;
+                    margin-bottom: 1rem;
+                    color: var(--primary-purple-light);
+                    position: relative;
+                }
+                .vision-card p {
+                    color: var(--text-secondary);
+                    line-height: 1.6;
+                    position: relative;
+                    margin-bottom: 1.5rem;
+                }
+                .market-validation {
+                    margin-top: 6rem;
+                    text-align: center;
+                }
+                .market-stats {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 3rem;
+                    margin: 3rem 0;
+                }
+                .market-stat {
+                    background: rgba(255, 255, 255, 0.03);
+                    border-radius: 16px;
+                    padding: 2rem;
+                    transition: transform 0.3s ease;
+                }
+                .market-stat:hover {
+                    transform: translateY(-5px);
+                }
+                .market-number {
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                    background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-purple-light) 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    margin-bottom: 1rem;
+                }
+                .market-label {
+                    color: var(--text-secondary);
+                    line-height: 1.4;
+                }
+                .tech-link-btn {
+                    display: inline-block;
+                    padding: 0.6rem 1.2rem;
+                    background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-purple-light) 100%);
+                    border-radius: 6px;
+                    color: white;
+                    text-decoration: none;
+                    font-weight: 500;
+                    font-size: 0.9rem;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    text-align: center;
+                    margin: auto auto 0;
+                    cursor: pointer;
+                }
+                .tech-link-btn:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+                }
+            </style>
+            <div class="section-content">
+                <div class="vision-header">
+                    <h2 class="vision-title-main">Our Vision</h2>
+                    <div class="vision-title-divider"></div>
+                    <h3 class="vision-title-sub">Democratizing Sleep Health</h3>
+                    <p class="vision-subtitle">Le Monitor represents a paradigm shift in sleep health monitoring. We're not just building another sleep tracker - we're creating a movement towards accessible, medical-grade sleep analysis that respects user privacy and empowers individuals to take control of their sleep.</p>
+                </div>
+                
+                <div class="vision-grid">
+                    <div class="vision-card">
+                        <div class="vision-icon">🎯</div>
+                        <h3>Accessibility First</h3>
+                        <p>Le Monitor transforms your smartphone into a medical-grade sleep monitoring device. No expensive equipment is needed for the base system - just the technology you already own.</p>
+                    </div>
+                    <div class="vision-card">
+                        <div class="vision-icon">🔒</div>
+                        <h3>Privacy by Design</h3>
+                        <p>Le Monitor is built on the principle of absolute privacy. By default, your sleep data is processed entirely on your device. In fact, we have no servers for Le Monitor itself - only ones to maintain our website and community forum.</p>
+                    </div>
+                    <div class="vision-card">
+                        <div class="vision-icon">🆓</div>
+                        <h3>Free Forever</h3>
+                        <p>We believe that sleep health should be accessible to everyone, and we're committed to keeping it that way. The base version of Le Monitor complete with a comprehensive selection of vital features is free - forever.</p>
+                    </div>
+                </div>
+<!-- 
+                <div class="vision-impact">
+                    <style>
+                        .vision-impact {
+                            margin-top: 6rem;
+                            text-align: center;
+                        }
+                        .impact-grid {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                            gap: 3rem;
+                            margin: 3rem 0;
+                        }
+                        .impact-card {
+                            background: rgba(255, 255, 255, 0.03);
+                            border-radius: 16px;
+                            padding: 2rem;
+                            text-align: left;
+                        }
+                        .impact-title {
+                            font-size: 1.4rem;
+                            color: var(--primary-purple-light);
+                            margin-bottom: 1rem;
+                        }
+                        .impact-text {
+                            color: var(--text-secondary);
+                            line-height: 1.6;
+                        }
+                    </style>
+                    <h3>Our Impact Vision</h3>
+                    <div class="glowing-divider"></div>
+                    <div class="impact-grid">
+                        <div class="impact-card">
+                            <h4 class="impact-title">Empowering Individual Health</h4>
+                            <p class="impact-text">By providing medical-grade sleep analysis directly to users, we're enabling individuals to take control of their sleep health. Early detection of sleep disorders and continuous monitoring of sleep quality can prevent serious health issues before they develop.</p>
+                        </div>
+                        <div class="impact-card">
+                            <h4 class="impact-title">Advancing Sleep Science</h4>
+                            <p class="impact-text">Our privacy-first approach to data collection allows users to optionally contribute their anonymized sleep data to sleep research. This creates a virtuous cycle where better data leads to improved sleep science, which in turn helps us provide better analysis.</p>
+                        </div>
+                        <div class="impact-card">
+                            <h4 class="impact-title">Community-Driven Progress</h4>
+                            <p class="impact-text">We're building more than an app - we're creating a community of sleep-conscious individuals. Through our forums and shared insights, users can learn from each other's experiences and collectively work towards better sleep health.</p>
+                        </div>
+                    </div> -->
+                </div>
+
+                <div class="section-content">
+                    <div class="vision-header">
+                        <div class="vision-title-divider"></div>
+                        <h3 class="vision-title-sub bright-purple">Decentralizing AI to Your Device</h3>
+                        <style>
+                            .bright-purple {
+                                color: #a742f5;
+                            }
+                        </style>
+                        <p class="vision-subtitle">We bring AI to the edge of your device, where it belongs. AI is best when it's in your hands, not in the cloud servers of a third party. Le Monitor is one of the first consumer-oriented apps that works towards this goal - but we're certain it won't be the last.</p>
+                    </div>
+                    
+                    <div class="vision-grid">
+                        <div class="vision-card">
+                            <div class="vision-icon">🤖</div>
+                            <h3>The Future of AI is Agentic</h3>
+                            <p>Le Monitor employs cutting-edge multi-agent AI systems to provide you with the most accurate sleep analysis possible, aiming to bring flagship level intelligence to your device.</p>
+                        </div>
+                        <div class="vision-card">
+                            <div class="vision-icon">🔋</div>
+                            <h3>20W is All You Need</h3>
+                            <p>We care about your battery life. Le Monitor is designed to be as efficient as possible, using minimal resources and only when needed. From what we've tried, 20W is all you need to power Le Monitor - and really any other AI-powered app.</p>
+                        </div>
+                        <div class="vision-card">
+                            <div class="vision-icon">💡</div>
+                            <h3>Innovation Driven</h3>
+                            <p>Though we aren't a tech company, we stand at the frontiers of AI technology to provide you with cheapest, most accurate sleep analysis possible. To this minute, we are experimenting with new deployment and inference methods to bring Le Monitor to older phones. Stay tuned!</p>
+                        </div>
+                    </div>
+
+                    <div class="vision-cta">
+                        <style>
+                            .vision-cta {
+                                text-align: center;
+                                margin: 4rem 0 2rem;
+                            }
+                            .vision-cta-text {
+                                color: var(--text-secondary);
+                                font-size: 1.1rem;
+                                line-height: 1.6;
+                                margin-bottom: 2rem;
+                                max-width: 800px;
+                                margin-left: auto;
+                                margin-right: auto;
+                            }
+                            .vision-cta-btn {
+                                display: inline-block;
+                                padding: 0.8rem 2rem;
+                                background: rgba(255, 255, 255, 0.05);
+                                border: 1px solid var(--primary-purple-light);
+                                border-radius: 8px;
+                                color: var(--text-primary);
+                                text-decoration: none;
+                                transition: all 0.3s ease;
+                            }
+                            .vision-cta-btn:hover {
+                                background: rgba(138, 43, 226, 0.1);
+                                transform: translateY(-2px);
+                            }
+                        </style>
+                        <p class="vision-cta-text">We bring a democratic approach to AI, ensuring that everyone has access to powerful sleep analysis technology without compromising their privacy or breaking their bank.</p>
+                        <a href="docs/technology/technology.html" class="vision-cta-btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="section-content looking-forward">
+                    <div class="vision-header">
+                        <div class="vision-title-divider"></div>
+                        <h3 class="vision-title-sub bright-purple">Looking Forward</h3>
+                        <p class="vision-subtitle">Le Monitor is our attempt to take the first step in the fight for sleep health. After all, one cannot fight an enemy they cannot see. We empower individuals to become more aware of their sleep quality and provide them with the suggestions to improve it, and we hope that we initiate a new era of better sleep for the world.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Show image ./media/poster.png centered and full width-->
+        <div class="poster-section">
+            <div class="section-content">
+                <div class="vision-header">
+                    <h2 class="vision-title-sub">Le Monitor in One Page</h2>
+                    <div class="vision-title-divider"></div>
+                </div>
+                <div class="poster-container">
+                    <style>
+                        .poster-container {
+                            width: 100%;
+                            max-width: 1200px;
+                            margin: 3rem auto 4rem;
+                            padding: 0 2rem;
+                        }
+                        .poster-container img {
+                            width: 100%;
+                            height: auto;
+                            border-radius: 20px;
+                            box-shadow: 0 4px 30px rgba(138, 43, 226, 0.2);
+                        }
+                    </style>
+                    <img src="./media/poster.png" alt="Le Monitor Poster" />
+                </div>
+            </div>
+        </div>
+         
+        <section class="target-audience">
+            <style>
+                .target-audience {
+                    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+                    padding: 6rem 2rem;
+                    color: var(--text-primary);
+                    position: relative;
+                    overflow: hidden;
+                }
+                .target-audience::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: radial-gradient(circle at 50% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
+                    pointer-events: none;
+                }
+                .audience-header {
+                    text-align: center;
+                    max-width: 800px;
+                    margin: 0 auto 4rem;
+                }
+                .audience-title {
+                    font-size: 4rem;
+                    margin-bottom: 1rem;
+                    background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-purple-light) 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+                .audience-subtitle {
+                    font-size: 1.2rem;
+                    line-height: 1.8;
+                    color: var(--text-secondary);
+                    margin-bottom: 2rem;
+                }
+                .audience-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    gap: 2rem;
+                    margin: 3rem 0;
+                }
+                .audience-card {
+                    background: rgba(255, 255, 255, 0.03);
+                    border-radius: 16px;
+                    padding: 2rem;
+                    transition: all 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                }
+                .audience-card::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, transparent 100%);
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+                .audience-card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 30px rgba(138, 43, 226, 0.15);
+                }
+                .audience-card:hover::before {
+                    opacity: 1;
+                }
+                .audience-icon {
+                    font-size: 2.5rem;
+                    margin-bottom: 1.5rem;
+                    position: relative;
+                }
+                .audience-title {
+                    font-size: 1.5rem;
+                    margin-bottom: 1rem;
+                    color: var(--primary-purple-light);
+                    position: relative;
+                }
+                .audience-description {
+                    color: var(--text-secondary);
+                    line-height: 1.6;
+                    position: relative;
+                }
+            </style>
+            <div class="section-content">
+                <div class="audience-header">
+                    <!-- <h3 class="vision-title-sub">Who We Serve</h3> -->
+                    <h4 class="vision-title-sub">Empowering Every Sleeper</h4>
+                    <div class="vision-title-divider"></div>
+                    <p class="vision-subtitle">Le Monitor is designed to meet the unique sleep monitoring needs of diverse groups, ensuring that everyone has access to professional sleep analysis.</p>
+                </div>
+                
+                <div class="audience-grid">
+                    <div class="audience-card">
+                        <div class="audience-icon">👨‍🎓</div>
+                        <h3 class="audience-title">Students</h3>
+                        <p class="audience-description">Build healthy sleep habits early through our competitive leaderboard system. Engage with peers while improving your sleep quality for better academic performance.</p>
+                    </div>
+                    <div class="audience-card">
+                        <div class="audience-icon">👩‍💼</div>
+                        <h3 class="audience-title">Young Professionals</h3>
+                        <p class="audience-description">Work pressure often leads to neglected sleep health. Prevent future health complications by monitoring and improving your sleep patterns now.</p>
+                    </div>
+                    <div class="audience-card">
+                        <div class="audience-icon">👴</div>
+                        <h3 class="audience-title">Elderly Population</h3>
+                        <p class="audience-description">Get quality sleep monitoring for early-detection of dangerous health threats. Automatically alert family and medical professionals if an emergency is detected.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing">
+            <div class="section-content">
+                <h2>Choose Your Plan</h2>
+                <div class="glowing-divider"></div>
+
+                <div class="pricing-grid">
+                    <div class="pricing-card basic">
+                        <div class="pro-badge">Sleep Safer</div>
+                        <img src="media/free_logo.png" alt="Basic Plan" class="pricing-logo">
+                        <h3>Free Forever</h3>
+                        <div class="price">$0<span>/month</span></div>
+                        <ul class="features-list">
+                            <li>Basic Sleep Tracking Features</li>
+                            <li>Unlimited History</li>
+                            <li>Basic Recommendations</li>
+                            <li>Access to LeMonitor Forums</li>
+                        </ul>
+                        <button class="primary-btn">Get Started</button>
+                    </div>
+                    <div class="pricing-card pro">
+                        <div class="pro-badge">Sleep Smarter</div>
+                        <img src="media/pro_logo.png" alt="Pro Plan" class="pricing-logo">
+                        <h3>LeMonitor Pro</h3>
+                        <div class="price">$9.99<span>/month</span></div>
+                        <ul class="features-list">
+                            <li>All Base Features</li>
+                            <li>Advanced Sleep Analytics</li>
+                            <li>AI-Powered Sleep Analysis</li>
+                            <li>Priority Support</li>
+                            <li>Custom Sleep Goals</li>
+                        </ul>
+                        <button class="primary-btn">Upgrade to Pro</button>
+                    </div>
+                    <div class="pricing-card extra">
+                        <div class="pro-badge">Customize Sleep</div>
+                        <img src="media/extra_logo.png" alt="Enterprise Plan" class="pricing-logo">
+                        <h3>LeMonitor Select</h3>
+                        <div class="price">Custom<span>/month</span></div>
+                        <ul class="features-list">
+                            <li>All Base/Pro features</li>
+                            <li>Purchase Custom Hardware</li>
+                            <li>Select Your Choice of Additional Sensor Plugins</li>
+                            <li>More Choices of AI Providers</li>
+                        </ul>
+                        <button class="primary-btn">Check Details</button>
+                    </div>
+                </div>
+
+                <br><br><br>
+                <p class="pricing-intro">Le Monitor aims to be accessible - we outcompete our competitors in terms of pricing while providing superior features and privacy-first design. Check out a comparison of Le Monitor with other sleep-monitoring capable products below.</p>
+                <div class="glowing-divider"></div>
+
+                <div class="comparison-table">
+                    <style>
+                        .pricing-intro {
+                            text-align: center;
+                            color: var(--text-secondary);
+                            max-width: 800px;
+                            margin: 2rem auto;
+                            font-size: 1.1rem;
+                            line-height: 1.6;
+                        }
+                        .comparison-table {
+                            width: 100%;
+                            max-width: 1000px;
+                            margin: 4rem auto 2rem;
+                            overflow-x: auto;
+                            background: rgba(255, 255, 255, 0.02);
+                            border-radius: 16px;
+                            padding: 1.5rem;
+                        }
+                        .comparison-table table {
+                            width: 100%;
+                            border-collapse: collapse;
+                            color: var(--text-secondary);
+                        }
+                        .comparison-table th {
+                            text-align: left;
+                            padding: 1rem;
+                            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                            color: var(--text-primary);
+                            font-weight: 500;
+                        }
+                        .comparison-table td {
+                            padding: 1rem;
+                            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                        }
+                        .comparison-table tr:last-child td {
+                            border-bottom: none;
+                        }
+                        .check-mark {
+                            color: var(--primary-purple-light);
+                        }
+                        .x-mark {
+                            color: #666;
+                        }
+                        .price-value {
+                            color: var(--text-primary);
+                        }
+                    </style>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Features</th>
+                                <th>Apple Watch</th>
+                                <th>Fitbit</th>
+                                <th>WHOOP 4</th>
+                                <th>Oura Ring Gen 3</th>
+                                <th>Le Monitor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Heart Rate Monitoring</td>
+                                <td class="check-mark">✓</td>
+                                <td class="check-mark">✓</td>
+                                <td class="check-mark">✓</td>
+                                <td class="check-mark">✓</td>
+                                <td class="check-mark">✓</td>
+                            </tr>
+                            <tr>
+                                <td>AI Sleep Data Processing</td>
+                                <td class="check-mark">✓</td>
+                                <td class="check-mark">✓</td>
+                                <td class="check-mark">✓</td>
+                                <td class="check-mark">✓</td>
+                                <td class="check-mark">✓</td>
+                            </tr>
+                            <tr>
+                                <td>Online Forum/Community</td>
+                                <td class="check-mark">✓</td>
+                                <td class="check-mark">✓</td>
+                                <td class="check-mark">✓</td>
+                                <td class="check-mark">✓</td>
+                                <td class="check-mark">✓</td>
+                            </tr>
+                            <tr>
+                                <td>Apnea Detection</td>
+                                <td class="check-mark">✓</td>
+                                <td class="x-mark">✗</td>
+                                <td class="x-mark">✗</td>
+                                <td class="x-mark">✗</td>
+                                <td class="check-mark">✓</td>
+                            </tr>
+                            <tr>
+                                <td>Personalized Daily AI Sleep Report</td>
+                                <td class="x-mark">✗</td>
+                                <td class="x-mark">✗</td>
+                                <td class="x-mark">✗</td>
+                                <td class="x-mark">✗</td>
+                                <td class="check-mark">✓</td>
+                            </tr>
+                            <tr>
+                                <td>Local Data Processing (Privacy)</td>
+                                <td class="x-mark">✗</td>
+                                <td class="x-mark">✗</td>
+                                <td class="x-mark">✗</td>
+                                <td class="x-mark">✗</td>
+                                <td class="check-mark">✓</td>
+                            </tr>
+                            <tr>
+                                <td>Hardware Costs</td>
+                                <td class="price-value">$399</td>
+                                <td class="price-value">$99</td>
+                                <td class="price-value">$0**</td>
+                                <td class="price-value">$299</td>
+                                <td class="price-value">Free</td>
+                            </tr>
+                            <tr>
+                                <td>Monthly Cost*</td>
+                                <td class="price-value">$33.25*</td>
+                                <td class="price-value">$9.99</td>
+                                <td class="price-value">$30</td>
+                                <td class="price-value">$5.99</td>
+                                <td class="price-value">$9.99</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                        *For solutions without a subscription fee, we assume a 2-year life span and calculate the average cost.<br>
+                        **Whoop 4 includes a free wearable device as part of their subscription - it can only be used with an active subscription.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section id="about" class="about">
+            <div class="section-content">
+                <h2>About Le Monitor</h2>
+                <div class="about-grid">
+                    <div class="about-content">
+                        <p class="about-text">
+                            Le Monitor is revolutionizing sleep tracking with privacy-first, AI-powered technology. 
+                            Our mission is to help everyone achieve better sleep while maintaining complete control over their data.
+                        </p>
+                        <p class="about-text">
+                            Built by sleep scientists and AI researchers, Le Monitor combines cutting-edge technology 
+                            with medical-grade accuracy to provide insights that actually improve your sleep quality.
+                        </p>
+                        <div class="about-cta">
+                            <a href="docs/technology/technology.html" class="secondary-btn">Learn More</a>
+                            <a href="mailto:contact@lemonitor.ai" class="primary-btn">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+    </main>
+
+    <iframe src="templates/footer.html" class="footer-frame" title="Footer"></iframe>
+
+    <script src="static/script.js"></script>
+    <script>
+        // Send scroll events to header iframe
+        window.addEventListener('scroll', function() {
+            const headerFrame = document.querySelector('.header-frame');
+            headerFrame.contentWindow.postMessage({
+                type: 'scroll',
+                scrollY: window.scrollY
+            }, '*');
+        });
+    </script>
+</body>
+</html> 

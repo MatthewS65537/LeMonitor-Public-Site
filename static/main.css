@@ -1,0 +1,527 @@
+:root {
+    --primary-purple: #8A2BE2;
+    --primary-purple-light: #9D4EDD;
+    --background-dark: #0A0A0A;
+    --background-card: #141414;
+    --text-primary: #FFFFFF;
+    --text-secondary: #A0A0A0;
+    --gradient-1: linear-gradient(135deg, var(--primary-purple) 0%, #3A0CA3 100%);
+    --gradient-2: linear-gradient(45deg, #2D00F7 0%, var(--primary-purple-light) 100%);
+    --gradient-3: linear-gradient(225deg, var(--primary-purple) 0%, #4B0082 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    background-color: var(--background-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.hero-visual {
+    position: absolute;
+    right: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60%;
+    height: 80%;
+}
+
+.gradient-sphere {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-2);
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.primary-btn, .secondary-btn {
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.primary-btn {
+    background: var(--gradient-1);
+    border: none;
+    color: white;
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 1px solid var(--primary-purple);
+    color: var(--primary-purple);
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+}
+
+.secondary-btn:hover {
+    background: rgba(138, 43, 226, 0.1);
+}
+
+/* Features Section */
+.features {
+    padding: 6rem 2rem;
+    background: var(--background-dark);
+}
+
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.features h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: var(--background-card);
+    padding: 2rem;
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+}
+
+/* Pricing Section */
+.pricing {
+    padding: 6rem 2rem;
+    background: var(--background-dark);
+}
+
+.pricing h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: var(--background-card);
+    padding: 3rem 2rem;
+    border-radius: 24px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(138, 43, 226, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(138, 43, 226, 0.1);
+}
+
+.pricing-logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+    object-fit: contain;
+}
+
+.pricing-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.price span {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.features-list {
+    list-style: none;
+    margin-bottom: 2rem;
+    text-align: left;
+    padding: 0 1rem;
+    min-height: 180px;
+    width: 100%;
+}
+
+.features-list li {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.features-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-purple);
+}
+
+.pro-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: white;
+}
+
+/* Specific pricing card styles */
+.pricing-card.basic {
+    border: 1px solid rgba(138, 43, 226, 0.1);
+}
+
+.pricing-card.basic .pro-badge {
+    background: var(--gradient-3);
+}
+
+.pricing-card.pro {
+    background: linear-gradient(var(--background-card), var(--background-card)) padding-box,
+                var(--gradient-1) border-box;
+    border: 1px solid transparent;
+    transform: scale(1.05);
+}
+
+.pricing-card.pro .pro-badge {
+    background: var(--gradient-1);
+}
+
+.pricing-card.pro:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.pricing-card.extra {
+    background: linear-gradient(var(--background-card), var(--background-card)) padding-box,
+                var(--gradient-2) border-box;
+    border: 1px solid transparent;
+}
+
+.pricing-card.extra .pro-badge {
+    background: var(--gradient-2);
+}
+
+.pricing-card.extra .price {
+    font-size: 2.5rem;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .pricing-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .pricing-card.pro {
+        transform: none;
+    }
+
+    .pricing-card.pro:hover {
+        transform: translateY(-10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero-visual {
+        opacity: 0.1;
+    }
+
+    .pricing-card {
+        padding: 2rem 1rem;
+    }
+
+    .features-list {
+        padding: 0;
+    }
+
+    .price {
+        font-size: 2.5rem;
+    }
+}
+
+/* About Section */
+.about {
+    padding: 6rem 2rem;
+    background: var(--background-dark);
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-grid {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content {
+    background: var(--background-card);
+    padding: 3rem;
+    border-radius: 24px;
+    border: 1px solid rgba(138, 43, 226, 0.1);
+    text-align: center;
+}
+
+.about-text {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.about-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        padding: 2rem;
+    }
+
+    .about-text {
+        font-size: 1.1rem;
+    }
+}
+
+/* Problems Section */
+.problems {
+    padding: 6rem 2rem;
+    background: var(--background-dark);
+    position: relative;
+    overflow: hidden;
+}
+
+.problems h2 {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+}
+
+.stat-card {
+    background: var(--background-card);
+    padding: 2.5rem 2rem;
+    border-radius: 24px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(138, 43, 226, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(138, 43, 226, 0.1);
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: var(--gradient-2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-text-small {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-divider {
+    width: 40px;
+    height: 4px;
+    background: var(--gradient-2);
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+.stat-text {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.problems-footer {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.problems-text {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+@media (max-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .problems {
+        padding: 4rem 1rem;
+    }
+
+    .problems h2 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .stat-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .stat-number {
+        font-size: 3rem;
+    }
+
+    .problems-text {
+        font-size: 1.1rem;
+    }
+} 

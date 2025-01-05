@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --primary-purple: #8A2BE2;
+            --primary-purple-light: #9D4EDD;
+            --background-card: #141414;
+            --text-primary: #FFFFFF;
+            --text-secondary: #A0A0A0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        footer {
+            background: var(--background-card);
+            padding: 3rem 2rem;
+            width: 100%;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            width: 100%;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-column h4 {
+            color: var(--text-primary);
+            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-column a {
+            display: block;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .footer-column a:hover {
+            color: var(--primary-purple-light);
+        }
+
+        .legal-warning {
+            width: 100%;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-links {
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-logo">Le Monitor</div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <a href="../index.html#features" target="_parent">Features</a>
+                    </div>
+                    <div class="footer-column">
+                        <a href="../index.html#pricing" target="_parent">Pricing</a>
+                    </div>
+                    <div class="footer-column">
+                        <a href="../docs/technology/technology.html" target="_parent">Technology</a>
+                    </div>
+                    <div class="footer-column">
+                        <a href="mailto:contact@lemonitor.ai" target="_parent">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="legal-warning">
+                This site was built using static HTML, CSS, and JavaScript, and its contents are currently used for the Conrad Challenge. All information, features, and pricing shown are for competition purposes only - hence the lack of proper backend features.
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

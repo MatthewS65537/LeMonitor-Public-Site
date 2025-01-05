@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology - Le Monitor</title>
+    <link rel="stylesheet" href="../../static/main.css">
+    <style>
+        .header-frame {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            border: none;
+            z-index: 1000;
+        }
+
+        .footer-frame {
+            width: 100%;
+            height: 300px;
+            border: none;
+            margin-top: -2rem;
+        }
+
+        main {
+            margin-top: 80px;
+            padding: 2rem 0;
+        }
+
+        .tech-header {
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tech-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tech-header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tech-card {
+            background: var(--background-card);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(138, 43, 226, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .tech-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tech-content {
+            padding: 2rem;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--gradient-1);
+            border-radius: 20px;
+            color: white;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .tech-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-divider {
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .section-divider h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @media (max-width: 768px) {
+            .tech-header {
+                padding: 2rem 1rem;
+            }
+
+            .tech-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .tech-grid {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <iframe src="../../templates/header.html" class="header-frame" title="Header"></iframe>
+
+    <main>
+        <div class="tech-header">
+            <h1>Our Technology</h1>
+            <p>Le Monitor pioneers accessible and private sleep monitoring through leveraging cutting-edge AI optimization techniques. Though not a tech company, we still stand at the forefront of modern innovation.</p>
+        </div>
+
+        <!-- <div class="section-divider">
+            <h2>Core Technologies</h2>
+        </div> -->
+
+        <div class="tech-grid">
+            <div class="tech-card">
+                <div class="tech-image">
+                    <img src="./media/ScalingDown.png" alt="AI Sleep Analysis">
+                </div>
+                <div class="tech-content">
+                    <div class="tech-badge">Accessibility & Privacy</div>
+                    <h3>Scaling Down is Scaling Wide</h3>
+                    <p>Say goodbye to ChatGPT. Le Monitor aims to scale down to your device, not up to the cloud, creating a more efficient and privacy-friendly sleep analysis solution. We believe the future of AI is decentralized.</p>
+                </div>
+            </div>
+
+            <div class="tech-card">
+                <div class="tech-image">
+                    <img src="./media/LocalAgents.png" alt="Privacy First">
+                </div>
+                <div class="tech-content">
+                    <div class="tech-badge">Accessibility</div>
+                    <h3>Agentic Local AI</h3>
+                    <p>We engineer our AI models to be agentic, allowing for thorough and accurate sleep analysis complete with personalized recommendations. We acheive 95% of GPT-4o's performance on your device: cheaper, safer, and more efficient.</p>
+                </div>
+            </div>
+
+            <div class="tech-card">
+                <div class="tech-image">
+                    <img src="./media/AppleSilicon-A18.jpg" alt="Hardware Integration">
+                </div>
+                <div class="tech-content">
+                    <div class="tech-badge">Efficiency</div>
+                    <h3>Apple Silicon Optimizations</h3>
+                    <p>Your battery will thank you. Le Monitor is optimized for Apple Silicon, increasing efficiency by an order of magnitude. We are now actively working on making similar optimizations for other devices.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="section-divider">
+            <h2>Research & Development</h2>
+        </div> -->
+
+        <div class="tech-grid">
+            <div class="tech-card">
+                <div class="tech-image">
+                    <img src="./media/AIEnhanced.png" alt="Research">
+                </div>
+                <div class="tech-content">
+                    <div class="tech-badge">Research</div>
+                    <h3>AI-Augmented Sensors</h3>
+                    <p>We train our AI on annotated medical-grade data to infer sleep metrics based off rudimentary phone sensors.</p>
+                </div>
+            </div>
+
+            <div class="tech-card">
+                <div class="tech-image">
+                    <img src="./media/PromptsMakeADifference.png" alt="Development">
+                </div>
+                <div class="tech-content">
+                    <div class="tech-badge">Development</div>
+                    <h3>Prompting AI Better</h3>
+                    <p>How human is AI? We noticed some curious behavior when optimizing our prompts, and we are excited to share some of our non-propietary findings.</p>
+                </div>
+            </div>
+
+            <div class="tech-card">
+                <div class="tech-image">
+                    <img src="./media/hybrid.png" alt="Collaboration">
+                </div>
+                <div class="tech-content">
+                    <div class="tech-badge">Compatability</div>
+                    <h3>Device-Agnostic Approach</h3>
+                    <p>We prepared our AI models to be device-agnostic, allowing for quick deployment on a wide range of devices once our apps are written.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <iframe src="../../templates/footer.html" class="footer-frame" title="Footer"></iframe>
+
+    <script>
+        // Send scroll events to header iframe
+        window.addEventListener('scroll', function() {
+            const headerFrame = document.querySelector('.header-frame');
+            headerFrame.contentWindow.postMessage({
+                type: 'scroll',
+                scrollY: window.scrollY
+            }, '*');
+        });
+    </script>
+</body>
+</html>
